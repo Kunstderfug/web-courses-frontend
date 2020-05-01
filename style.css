@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+:root {
+  --header-back-dark: #111111;
+  --primary-back-dark: #242424;
+  --primary-text-dark: #f0f0f0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-back-dark);
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: var(--header-back-dark);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: var(--primary-text-dark);
+  padding: 10px 40px;
+}
+
+header nav li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+main {
+  max-width: 1024px;
+  color: white;
+  background-color: #353535;
+  padding: 40px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (min-width: 1920px) {
+  main {
+    min-width: 1920px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 960px) {
+  main {
+    padding: 20px;
+  }
+}
+
+.courses {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+@media (max-width: 600px) {
+  .courses {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .courses {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.course-card {
+  position: relative;
+  background-color: #2c2c2c;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.course-card small {
+  display: block;
+}
+
+.course-card__image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.course-card__content {
+  padding: 20px;
+}
+
+.course-card__title {
+  margin: -10px;
+}
+
+.course-card__num-lessons {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.course-card__description {
+  margin-bottom: 100px;
+}
+
+.course-card__link {
+  text-decoration: none;
+  color: white;
+}
+
+.course-card__price {
+  position: absolute;
+  font-size: 130%;
+  font-style: italic;
+  text-align: right;
+  bottom: 0;
+  right: 20px;
+}
