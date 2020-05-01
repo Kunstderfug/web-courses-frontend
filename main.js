@@ -1,4 +1,6 @@
 const courses = document.getElementById('courses')
+const main = document.getElementById('main')
+const checkQuery = window.matchMedia('(max-width: 600px)').matches
 
 const getCourses = async () => {
     const res = await fetch('https://secure-ocean-05070.herokuapp.com/courses/')
@@ -7,7 +9,8 @@ const getCourses = async () => {
     const course = data.forEach(el => {
         //Get all data from the API
         const ID = el.id
-        const image = el.poster.url
+        let image;
+        checkQuery ? image = el.poster.formats.small.url : image = el.poster.formats.medium.url
         const title = el.name.split(' ').slice(2).join(' ')
         const composer = el.name.split(' ').slice(0, 2).join(' ')
         const numLessons = el.lessons.length

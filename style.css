@@ -19,6 +19,10 @@ body {
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 header {
   background-color: var(--header-back-dark);
   display: -webkit-box;
