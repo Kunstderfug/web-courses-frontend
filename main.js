@@ -6,7 +6,7 @@ const getCourses = async () => {
     const res = await fetch('https://secure-ocean-05070.herokuapp.com/courses/')
     const data = await res.json()
 
-    const course = data.forEach(el => {
+    data.forEach(el => {
         //Get all data from the API
         const ID = el.id
         let image;
@@ -24,7 +24,10 @@ const getCourses = async () => {
         const card = document.createElement('div')
         card.setAttribute('class', 'course-card')
         card.innerHTML = `
+        <picture>
+            <source srcset="${image.replace('jpeg', 'webp')}" type="image/webp" class="course-card__image" alt="course-image">
             <img src="${image}" class="course-card__image" alt="course-image">
+        </picture>
             <div class="course-card__content">
                 <h3 class="course-card__title" id="${ID}">${composer}<small>${title}</small></h3>
                 <p class="course-card__num-lessons">(${numLessons} lessons)</p>
@@ -34,6 +37,8 @@ const getCourses = async () => {
             </div>
         `
         courses.appendChild(card)
+        console.log(image.replace('jpeg', 'webp'));
+
     });
 
 
